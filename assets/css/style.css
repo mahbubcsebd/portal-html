@@ -540,17 +540,23 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 0.8em;
-  height: 0.8em;
+  width: 32px;
+  height: 32px;
   margin-right: 8px;
   vertical-align: middle;
   flex-shrink: 0;
 }
 @media (min-width: 768px) {
   .t4e-portal-blob-inline-container {
-    width: 0.8em;
-    height: 0.8em;
+    width: 38px;
+    height: 38px;
     margin-right: 12px;
+  }
+}
+@media (min-width: 1280px) {
+  .t4e-portal-blob-inline-container {
+    width: 44px;
+    height: 44px;
   }
 }
 
@@ -623,36 +629,13 @@ a {
 .t4e-portal-hero-inner {
   position: relative;
   z-index: 20;
-  padding: 48px 0;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 @media (min-width: 1024px) {
   .t4e-portal-hero-inner {
-    padding: 96px 0;
-  }
-}
-.hero-container {
-  /* removed */
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 48px 20px;
-  position: relative;
-  z-index: 20;
-}
-@media (min-width: 1024px) {
-  .t4e-portal-hero-inner {
-    position: relative;
-    z-index: 20;
-    padding: 48px 0;
-  }
-  @media (min-width: 1024px) {
-    .t4e-portal-hero-inner {
-      padding: 96px 0;
-    }
-  }
-  .hero-container {
-    /* removed */
-    padding: 96px 20px;
+    padding-top: 96px;
+    padding-bottom: 96px;
   }
 }
 
@@ -676,14 +659,14 @@ a {
 
 @media (min-width: 1024px) {
   .t4e-portal-hero-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 60px;
+    grid-template-columns: 1.05fr 0.95fr; /* 2-column layout on laptop with narrower gap */
+    gap: 40px;
   }
 
   .t4e-portal-hero-left {
     text-align: left;
     align-items: flex-start;
-    gap: 32px;
+    gap: 28px;
   }
 
   .t4e-portal-hero-title {
@@ -702,6 +685,17 @@ a {
 
   .t4e-portal-hero-buttons {
     justify-content: flex-start !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .t4e-portal-hero-grid {
+    grid-template-columns: 1.15fr 0.85fr; /* Normal columns on wider desktops */
+    gap: 60px;
+  }
+
+  .t4e-portal-hero-left {
+    gap: 32px;
   }
 }
 
@@ -920,19 +914,24 @@ a {
 }
 
 .t4e-portal-hero-title {
-  font-size: 32px;
-  line-height: 1.2;
+  font-size: 30px; /* Mobile */
+  line-height: 1.25;
   font-weight: 700;
   color: var(--color-text-dark);
 }
 @media (min-width: 768px) {
   .t4e-portal-hero-title {
-    font-size: 42px;
+    font-size: 40px; /* Tablet */
   }
 }
 @media (min-width: 1024px) {
   .t4e-portal-hero-title {
-    font-size: 50px;
+    font-size: 44px; /* Laptop */
+  }
+}
+@media (min-width: 1280px) {
+  .t4e-portal-hero-title {
+    font-size: 52px; /* Desktop */
   }
 }
 
