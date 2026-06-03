@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - think4ever Portal</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css?v=15.0" />
+
+    <style>
+      /* Auth Page Specific Styles */
+      .t4e-auth-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        padding: 24px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Premium glassmorphism card */
+      .t4e-auth-card {
+        width: 100%;
+        max-width: 450px;
+        background: rgba(240, 248, 255, 0.6);
+        border: 1px solid rgba(7, 167, 225, 0.22);
+        box-shadow: none;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 24px;
+        padding: 48px 40px;
+        position: relative;
+        z-index: 10;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      @media (max-width: 480px) {
+        .t4e-auth-card {
+          padding: 36px 24px;
+          border-radius: 20px;
+        }
+      }
+
+      .t4e-auth-logo-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+      .t4e-auth-logo-img {
+        width: 140px;
+        height: auto;
+      }
+
+      .t4e-auth-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .t4e-auth-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--color-text-dark);
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+      }
+      .t4e-auth-subtitle {
+        font-size: 13px;
+        color: var(--color-text-light);
+      }
+
+      .t4e-auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .t4e-auth-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .t4e-auth-label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-text-light);
+      }
+
+      .t4e-auth-input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .t4e-auth-input-icon {
+        position: absolute;
+        left: 14px;
+        color: #94a3b8;
+        pointer-events: none;
+        transition: color 0.3s;
+      }
+      .t4e-auth-input {
+        width: 100%;
+        height: 46px;
+        padding: 0 16px 0 42px;
+        border: 1px solid rgba(228, 228, 231, 0.8);
+        border-radius: 12px;
+        font-family: var(--font-sans);
+        font-size: 14px;
+        color: var(--color-text-dark);
+        background-color: rgba(255, 255, 255, 0.7);
+        outline: none;
+        transition: all 0.3s var(--transition-smooth);
+      }
+      .t4e-auth-input:focus {
+        border-color: var(--color-brand-light-blue);
+        background-color: #ffffff;
+        box-shadow: 0 0 0 4px rgba(7, 167, 225, 0.08);
+      }
+      .t4e-auth-input:focus + .t4e-auth-input-icon {
+        color: var(--color-brand-blue);
+      }
+
+      .t4e-auth-input-toggle {
+        position: absolute;
+        right: 14px;
+        color: #94a3b8;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        transition: color 0.3s;
+      }
+      .t4e-auth-input-toggle:hover {
+        color: var(--color-brand-blue);
+      }
+
+      .t4e-auth-meta {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+      
+      .t4e-auth-remember {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        user-select: none;
+        color: var(--color-text-light);
+      }
+      .t4e-auth-remember input {
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        border-radius: 4px;
+        border: 1px solid #cbd5e1;
+        accent-color: var(--color-brand-blue);
+      }
+
+      .t4e-auth-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        height: 48px;
+        background: linear-gradient(135deg, var(--color-brand-light-blue) 0%, var(--color-brand-blue) 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-family: var(--font-sans);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-top: 10px;
+        outline: none;
+      }
+      .t4e-auth-btn:hover {
+        box-shadow: 0 6px 20px rgba(9, 60, 173, 0.25);
+        transform: translateY(-1px);
+      }
+      .t4e-auth-btn:active {
+        transform: translateY(0);
+      }
+
+      .t4e-auth-footer {
+        text-align: center;
+        margin-top: 28px;
+        font-size: 13px;
+        color: var(--color-text-light);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .t4e-auth-footer-link {
+        color: var(--color-brand-blue);
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+      .t4e-auth-footer-link:hover {
+        color: var(--color-brand-light-blue);
+      }
+
+      .t4e-auth-back-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--color-text-light);
+        transition: color 0.3s;
+      }
+      .t4e-auth-back-link:hover {
+        color: var(--color-brand-blue);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="t4e-auth-page">
+      <!-- Auth Form Card -->
+      <div class="t4e-auth-card" id="auth-card">
+        <!-- Logo -->
+        <div class="t4e-auth-logo-wrapper">
+          <a href="/">
+            <img src="assets/images/logo.png" alt="think4ever Logo" class="t4e-auth-logo-img" />
+          </a>
+        </div>
+
+        <!-- Header -->
+        <div class="t4e-auth-header">
+          <h1 class="t4e-auth-title">Create Account</h1>
+          <p class="t4e-auth-subtitle">Sign up to start building with agentic workflows</p>
+        </div>
+
+        <!-- Form -->
+        <form class="t4e-auth-form" onsubmit="event.preventDefault();">
+          <!-- Full Name -->
+          <div class="t4e-auth-group">
+            <label class="t4e-auth-label" for="fullname">Full Name</label>
+            <div class="t4e-auth-input-wrapper">
+              <input
+                type="text"
+                id="fullname"
+                class="t4e-auth-input"
+                placeholder="Enter your full name"
+                required
+              />
+              <i data-lucide="user" class="t4e-auth-input-icon t4e-portal-icon-sm"></i>
+            </div>
+          </div>
+
+          <!-- Email Address -->
+          <div class="t4e-auth-group">
+            <label class="t4e-auth-label" for="email">Email Address</label>
+            <div class="t4e-auth-input-wrapper">
+              <input
+                type="email"
+                id="email"
+                class="t4e-auth-input"
+                placeholder="you@company.com"
+                required
+              />
+              <i data-lucide="at-sign" class="t4e-auth-input-icon t4e-portal-icon-sm"></i>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="t4e-auth-group">
+            <label class="t4e-auth-label" for="password">Password</label>
+            <div class="t4e-auth-input-wrapper">
+              <input
+                type="password"
+                id="password"
+                class="t4e-auth-input"
+                placeholder="Create a password"
+                required
+              />
+              <i data-lucide="key-round" class="t4e-auth-input-icon t4e-portal-icon-sm"></i>
+              <button
+                type="button"
+                id="password-toggle"
+                class="t4e-auth-input-toggle"
+                aria-label="Toggle password visibility"
+              >
+                <i data-lucide="eye" class="t4e-portal-icon-sm" id="toggle-icon"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Agree Terms Checkbox -->
+          <div class="t4e-auth-meta">
+            <label class="t4e-auth-remember">
+              <input type="checkbox" id="terms" required />
+              <span>I agree to the <a href="#" style="color: var(--color-brand-blue); font-weight: 500;">Terms & Conditions</a></span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="t4e-auth-btn">
+            Create Account <i data-lucide="arrow-up-right" class="t4e-portal-icon-sm"></i>
+          </button>
+        </form>
+
+        <!-- Footer -->
+        <div class="t4e-auth-footer">
+          <div>
+            Already have an account? 
+            <a href="login.html" class="t4e-auth-footer-link">Sign In</a>
+          </div>
+          <div>
+            <a href="index.html" class="t4e-auth-back-link">
+              <i data-lucide="chevron-left" class="t4e-portal-icon-xs"></i> Back to home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Logic and Animation Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Password visibility toggle
+      const passwordInput = document.getElementById('password');
+      const passwordToggle = document.getElementById('password-toggle');
+      const toggleIcon = document.getElementById('toggle-icon');
+
+      passwordToggle.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        
+        // Update eye icon state
+        toggleIcon.setAttribute('data-lucide', isPassword ? 'eye-off' : 'eye');
+        lucide.createIcons();
+      });
+
+      // GSAP Entrance Animation
+      window.addEventListener('DOMContentLoaded', () => {
+        gsap.to('#auth-card', {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          delay: 0.1
+        });
+      });
+    </script>
+  </body>
+</html>
