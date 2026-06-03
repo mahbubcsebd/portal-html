@@ -21,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css?v=15.0" />
   </head>
   <body>
     <!-- ================= HEADER ================= -->
@@ -86,24 +86,6 @@
                 <span class="t4e-portal-active-indicator"></span>
                 <span class="t4e-portal-link-text">Packages</span>
               </a>
-            </div>
-            <div class="t4e-portal-mobile-auth-actions">
-              <a
-                href="#"
-                class="t4e-portal-btn-outline"
-                style="width: 100%; justify-content: center"
-              >
-                <i data-lucide="log-in" class="t4e-portal-icon-sm"></i> Sign In
-              </a>
-              <a
-                href="#"
-                class="t4e-portal-btn-primary"
-                style="width: 100%; justify-content: center; margin-top: 12px"
-              >
-                <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Get
-                Started
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -113,8 +95,8 @@
     <main class="t4e-portal-main-content">
       <!-- Hero Section -->
       <section class="t4e-portal-hero-section" id="home">
-        <!-- Orbital Circle Background (Desktop Only) -->
-        <div class="t4e-portal-orbital-circle t4e-portal-hidden-mobile">
+        <!-- Orbital Circle Background -->
+        <div class="t4e-portal-orbital-circle">
           <div class="t4e-portal-orbit-ball-container">
             <div class="t4e-portal-orbit-ball">
               <div
@@ -180,18 +162,17 @@
         <div class="t4e-portal-container t4e-portal-hero-inner">
           <div class="t4e-portal-hero-content">
             <h1 class="t4e-portal-hero-title">
-              <span
-                class="t4e-portal-inline-flex-center t4e-portal-gap-sm flex-wrap justify-center"
-              >
-                <div class="t4e-portal-blob-container">
-                  <div class="t4e-portal-breathing-blob">
-                    <div class="t4e-portal-breathing-blob-inner"></div>
-                    <div class="t4e-portal-breathing-blob-icon">
-                      <i data-lucide="infinity" stroke-width="3"></i>
-                    </div>
-                  </div>
-                </div>
-                Full-Cycle Development.
+              <span class="t4e-portal-title-line-wrapper">
+                <span class="t4e-portal-inline-flex-center" style="gap: 8px; white-space: nowrap; vertical-align: middle;">
+                  <span class="t4e-portal-blob-inline-container" style="margin-right: 0;">
+                    <span class="t4e-portal-breathing-blob">
+                      <span class="t4e-portal-breathing-blob-inner"></span>
+                      <span class="t4e-portal-breathing-blob-icon">
+                        <i data-lucide="infinity" stroke-width="3"></i>
+                      </span>
+                    </span>
+                  </span>Full-Cycle
+                </span>&nbsp;Development.
               </span>
               <br />
               <span class="t4e-portal-text-gradient">Entirely Agentic.</span>
@@ -205,12 +186,10 @@
 
             <div class="t4e-portal-hero-buttons">
               <a href="#" class="t4e-portal-btn-primary-lg">
-                <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Start
-                Building
+                <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Start Building
               </a>
               <a href="#how-it-works" class="t4e-portal-btn-outline-lg">
-                <i data-lucide="play-circle" class="t4e-portal-icon-sm"></i> See
-                How It Works
+                <i data-lucide="play-circle" class="t4e-portal-icon-sm"></i> See How It Works
               </a>
             </div>
           </div>
@@ -222,88 +201,48 @@
                 END-TO-END SDLC PIPELINE
               </p>
               <div class="t4e-portal-pipeline-steps">
+                <!-- Row 1: 3 Steps -->
                 <div class="t4e-portal-pipeline-step">
-                  <i
-                    data-lucide="lightbulb"
-                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
-                  ></i>
+                  <i data-lucide="lightbulb" class="t4e-portal-icon-xs t4e-portal-text-brand-blue"></i>
                   Concept
                 </div>
-                <i
-                  data-lucide="chevron-right"
-                  class="t4e-portal-icon-xs t4e-portal-text-muted"
-                ></i>
+                <i data-lucide="chevron-right" class="t4e-portal-pipeline-arrow t4e-portal-text-muted"></i>
                 <div class="t4e-portal-pipeline-step">
-                  <i
-                    data-lucide="pen-tool"
-                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
-                  ></i>
+                  <i data-lucide="pen-tool" class="t4e-portal-icon-xs t4e-portal-text-brand-blue"></i>
                   UI Design
                 </div>
-                <i
-                  data-lucide="chevron-right"
-                  class="t4e-portal-icon-xs t4e-portal-text-muted"
-                ></i>
+                <i data-lucide="chevron-right" class="t4e-portal-pipeline-arrow t4e-portal-text-muted"></i>
                 <div class="t4e-portal-pipeline-step">
-                  <i
-                    data-lucide="git-branch"
-                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
-                  ></i>
+                  <i data-lucide="git-branch" class="t4e-portal-icon-xs t4e-portal-text-brand-blue"></i>
                   Architecture
                 </div>
-                <i
-                  data-lucide="chevron-right"
-                  class="t4e-portal-icon-xs t4e-portal-text-muted"
-                ></i>
+                <i data-lucide="chevron-right" class="t4e-portal-pipeline-arrow t4e-portal-text-muted"></i>
+
+                <!-- Row 2: 3 Steps -->
                 <div class="t4e-portal-pipeline-step">
-                  <i
-                    data-lucide="file-text"
-                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
-                  ></i>
+                  <i data-lucide="file-text" class="t4e-portal-icon-xs t4e-portal-text-brand-blue"></i>
                   Specs
                 </div>
-                <i
-                  data-lucide="chevron-right"
-                  class="t4e-portal-icon-xs t4e-portal-text-muted"
-                ></i>
+                <i data-lucide="chevron-right" class="t4e-portal-pipeline-arrow t4e-portal-text-muted"></i>
                 <div class="t4e-portal-pipeline-step">
-                  <i
-                    data-lucide="code"
-                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
-                  ></i>
+                  <i data-lucide="code" class="t4e-portal-icon-xs t4e-portal-text-brand-blue"></i>
                   Build
                 </div>
-                <i
-                  data-lucide="chevron-right"
-                  class="t4e-portal-icon-xs t4e-portal-text-muted"
-                ></i>
+                <i data-lucide="chevron-right" class="t4e-portal-pipeline-arrow t4e-portal-text-muted"></i>
                 <div class="t4e-portal-pipeline-step">
-                  <i
-                    data-lucide="check-circle"
-                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
-                  ></i>
+                  <i data-lucide="check-circle" class="t4e-portal-icon-xs t4e-portal-text-brand-blue"></i>
                   Test
                 </div>
-                <i
-                  data-lucide="chevron-right"
-                  class="t4e-portal-icon-xs t4e-portal-text-muted"
-                ></i>
+                <i data-lucide="chevron-right" class="t4e-portal-pipeline-arrow t4e-portal-text-muted"></i>
+
+                <!-- Row 3: 2 Steps -->
                 <div class="t4e-portal-pipeline-step">
-                  <i
-                    data-lucide="shield"
-                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
-                  ></i>
+                  <i data-lucide="shield" class="t4e-portal-icon-xs t4e-portal-text-brand-blue"></i>
                   Security
                 </div>
-                <i
-                  data-lucide="chevron-right"
-                  class="t4e-portal-icon-xs t4e-portal-text-muted"
-                ></i>
+                <i data-lucide="chevron-right" class="t4e-portal-pipeline-arrow t4e-portal-text-muted"></i>
                 <div class="t4e-portal-pipeline-step">
-                  <i
-                    data-lucide="rocket"
-                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
-                  ></i>
+                  <i data-lucide="rocket" class="t4e-portal-icon-xs t4e-portal-text-brand-blue"></i>
                   Deploy
                 </div>
               </div>
