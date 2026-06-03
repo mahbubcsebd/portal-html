@@ -21,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=15.0" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20.0" />
   </head>
   <body>
     <!-- ================= HEADER ================= -->
@@ -37,20 +37,20 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="t4e-portal-header-nav">
+        <!-- <nav class="t4e-portal-header-nav">
           <a href="#features" class="t4e-portal-nav-link">Features</a>
           <a href="#how-it-works" class="t4e-portal-nav-link">How It Works</a>
           <a href="#packages" class="t4e-portal-nav-link">Packages</a>
-        </nav>
+        </nav> -->
 
         <!-- Header Right (Buttons & Hamburger) -->
         <div class="t4e-portal-header-right">
-          <a href="login.html" class="t4e-portal-btn-outline">
+          <!-- <a href="login.html" class="t4e-portal-btn-outline">
             <i data-lucide="log-in" class="t4e-portal-icon-sm"></i> Sign In
           </a>
           <a href="register.html" class="t4e-portal-btn-primary">
             <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Get Started
-          </a>
+          </a> -->
 
           <!-- Hamburger Toggle -->
           <button
@@ -95,63 +95,10 @@
     <main class="t4e-portal-main-content">
       <!-- Hero Section -->
       <section class="t4e-portal-hero-section" id="home">
-        <!-- Orbital Circle Background -->
-        <div class="t4e-portal-orbital-circle">
-          <div class="t4e-portal-orbit-ball-container">
-            <div class="t4e-portal-orbit-ball">
-              <div
-                class="t4e-portal-orbit-ball-inner"
-                style="transform: rotate(0deg)"
-              >
-                <div class="t4e-portal-orbit-ball-icon-wrapper">
-                  <i
-                    data-lucide="infinity"
-                    class="t4e-portal-icon-xs"
-                    stroke-width="3"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="t4e-portal-orbit-ball-container"
-            style="transform: rotate(120deg)"
-          >
-            <div class="t4e-portal-orbit-ball">
-              <div
-                class="t4e-portal-orbit-ball-inner"
-                style="transform: rotate(-120deg)"
-              >
-                <div class="t4e-portal-orbit-ball-icon-wrapper">
-                  <i
-                    data-lucide="infinity"
-                    class="t4e-portal-icon-xs"
-                    stroke-width="3"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="t4e-portal-orbit-ball-container"
-            style="transform: rotate(240deg)"
-          >
-            <div class="t4e-portal-orbit-ball">
-              <div
-                class="t4e-portal-orbit-ball-inner"
-                style="transform: rotate(-240deg)"
-              >
-                <div class="t4e-portal-orbit-ball-icon-wrapper">
-                  <i
-                    data-lucide="infinity"
-                    class="t4e-portal-icon-xs"
-                    stroke-width="3"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <!-- Animated Background Glows -->
+        <div class="t4e-hero-bg-glow-1"></div>
+        <div class="t4e-hero-bg-glow-2"></div>
 
         <!-- Vertical Watermark (Desktop Only) -->
         <!-- <div class="t4e-portal-watermark t4e-portal-hidden-mobile">
@@ -160,37 +107,80 @@
 
         <!-- Hero Content -->
         <div class="t4e-portal-container t4e-portal-hero-inner">
-          <div class="t4e-portal-hero-content">
-            <h1 class="t4e-portal-hero-title">
-              <span class="t4e-portal-title-line-wrapper">
-                <span class="t4e-portal-inline-flex-center" style="gap: 8px; white-space: nowrap; vertical-align: middle;">
-                  <span class="t4e-portal-blob-inline-container" style="margin-right: 0;">
+          <div class="t4e-portal-hero-grid">
+            <!-- Left Side: Content -->
+            <div class="t4e-portal-hero-left">
+              <h1 class="t4e-portal-hero-title">
+                <span class="t4e-portal-inline-flex-center" style="gap: 12px; vertical-align: middle; align-items: center;">
+                  <span class="t4e-portal-blob-inline-container" style="margin-right: 0; width: 44px; height: 44px;">
                     <span class="t4e-portal-breathing-blob">
                       <span class="t4e-portal-breathing-blob-inner"></span>
                       <span class="t4e-portal-breathing-blob-icon">
                         <i data-lucide="infinity" stroke-width="3"></i>
                       </span>
                     </span>
-                  </span>Full-Cycle
-                </span>&nbsp;Development.
-              </span>
-              <br />
-              <span class="t4e-portal-text-gradient">Entirely Agentic.</span>
-            </h1>
+                  </span>
+                  Full-Cycle Development.
+                </span>
+                <br />
+                <span class="t4e-portal-text-gradient">Entirely Agentic.</span>
+              </h1>
 
-            <p class="t4e-portal-hero-subtitle">
-              The only platform where AI agents handle the complete software
-              development lifecycle — from concept to production — all under
-              human oversight.
-            </p>
+              <p class="t4e-portal-hero-subtitle">
+                The only platform where AI agents handle the complete software
+                development lifecycle — from concept to production — all under
+                human oversight.
+              </p>
 
-            <div class="t4e-portal-hero-buttons">
-              <a href="#" class="t4e-portal-btn-primary-lg">
-                <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Start Building
-              </a>
-              <a href="#how-it-works" class="t4e-portal-btn-outline-lg">
-                <i data-lucide="play-circle" class="t4e-portal-icon-sm"></i> See How It Works
-              </a>
+              <div class="t4e-portal-hero-buttons">
+                <a href="register.html" class="t4e-portal-btn-primary-lg">
+                  <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Start Building
+                </a>
+                <a href="#how-it-works" class="t4e-portal-btn-outline-lg">
+                  <i data-lucide="play-circle" class="t4e-portal-icon-sm"></i> See How It Works
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Side: Login Form -->
+            <div class="t4e-portal-hero-right">
+              <div class="t4e-hero-login-card">
+                <div class="t4e-hero-login-header">
+                  <h2 class="t4e-hero-login-title">Welcome Back</h2>
+                  <p class="t4e-hero-login-subtitle">Sign in to your account</p>
+                </div>
+                <form class="t4e-hero-login-form" onsubmit="event.preventDefault();">
+                  <div class="t4e-hero-login-group">
+                    <label class="t4e-hero-login-label">Email Address</label>
+                    <div class="t4e-hero-login-input-wrapper">
+                      <input type="email" placeholder="you@company.com" required class="t4e-hero-login-input" />
+                      <i data-lucide="at-sign" class="t4e-hero-login-icon"></i>
+                    </div>
+                  </div>
+                  <div class="t4e-hero-login-group">
+                    <label class="t4e-hero-login-label">Password</label>
+                    <div class="t4e-hero-login-input-wrapper">
+                      <input type="password" id="hero-password" placeholder="Enter password" required class="t4e-hero-login-input" />
+                      <i data-lucide="key-round" class="t4e-hero-login-icon"></i>
+                      <button type="button" id="hero-password-toggle" class="t4e-hero-login-toggle" aria-label="Toggle password visibility">
+                        <i data-lucide="eye" class="t4e-hero-login-eye" id="hero-toggle-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="t4e-hero-login-meta">
+                    <label class="t4e-hero-login-remember">
+                      <input type="checkbox" /> Remember me
+                    </label>
+                    <a href="login.html" class="t4e-hero-login-forgot">Forgot?</a>
+                  </div>
+                  <button type="submit" class="t4e-hero-login-btn">
+                    Sign In <i data-lucide="arrow-up-right" class="t4e-portal-icon-sm"></i>
+                  </button>
+                </form>
+                <div class="t4e-hero-login-footer">
+                  Don't have an account? <a href="register.html">Create one</a>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -173,4 +173,18 @@ document.addEventListener('DOMContentLoaded', () => {
     footerObserver.observe(footerSec);
   }
 
+  // Hero login password show/hide toggle
+  const heroPasswordInput = document.getElementById('hero-password');
+  const heroPasswordToggle = document.getElementById('hero-password-toggle');
+  const heroToggleIcon = document.getElementById('hero-toggle-icon');
+
+  if (heroPasswordInput && heroPasswordToggle && heroToggleIcon) {
+    heroPasswordToggle.addEventListener('click', () => {
+      const isPassword = heroPasswordInput.type === 'password';
+      heroPasswordInput.type = isPassword ? 'text' : 'password';
+      heroToggleIcon.setAttribute('data-lucide', isPassword ? 'eye-off' : 'eye');
+      lucide.createIcons();
+    });
+  }
+
 });

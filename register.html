@@ -35,6 +35,57 @@
         overflow: hidden;
       }
 
+      /* Smooth parallax wave styling across bottom 50% */
+      .t4e-wave-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50vh;
+        min-height: 250px;
+        max-height: 50vh;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.9;
+      }
+
+      .t4e-waves {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        margin-bottom: -7px;
+        filter: blur(12px); /* Soft blur to make it look like organic glowing liquid */
+      }
+
+      /* Parallax Animation */
+      .t4e-parallax-waves > use {
+        animation: move-forever 18s cubic-bezier(.55,.5,.45,.5) infinite;
+      }
+      .t4e-parallax-waves > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 9s;
+      }
+      .t4e-parallax-waves > use:nth-child(2) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+      }
+      .t4e-parallax-waves > use:nth-child(3) {
+        animation-delay: -6s;
+        animation-duration: 17s;
+      }
+
+      @keyframes move-forever {
+        0% {
+          transform: translate3d(-90px, 0, 0);
+        }
+        100% {
+          transform: translate3d(85px, 0, 0);
+        }
+      }
+
       /* Premium glassmorphism card */
       .t4e-auth-card {
         width: 100%;
@@ -241,6 +292,32 @@
   </head>
   <body>
     <div class="t4e-auth-page">
+      <!-- Smooth Parallax Waves (glowing liquid gradient waves) -->
+      <div class="t4e-wave-container">
+        <svg class="t4e-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            <linearGradient id="wave-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(7, 167, 225, 0.45)" />
+              <stop offset="100%" stop-color="rgba(9, 60, 173, 0.75)" />
+            </linearGradient>
+            <linearGradient id="wave-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(7, 167, 225, 0.65)" />
+              <stop offset="100%" stop-color="rgba(9, 60, 173, 0.9)" />
+            </linearGradient>
+            <linearGradient id="wave-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(7, 167, 225, 0.3)" />
+              <stop offset="100%" stop-color="rgba(9, 60, 173, 0.55)" />
+            </linearGradient>
+          </defs>
+          <g class="t4e-parallax-waves">
+            <use href="#gentle-wave" x="48" y="0" fill="url(#wave-grad-1)" />
+            <use href="#gentle-wave" x="48" y="3" fill="url(#wave-grad-2)" />
+            <use href="#gentle-wave" x="48" y="6" fill="url(#wave-grad-3)" />
+          </g>
+        </svg>
+      </div>
+
       <!-- Auth Form Card -->
       <div class="t4e-auth-card" id="auth-card">
         <!-- Logo -->
