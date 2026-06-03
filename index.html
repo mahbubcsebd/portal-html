@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>think4ever Portal</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header id="main-header" class="t4e-portal-header">
+      <div class="header-container">
+        <!-- Brand Logo -->
+        <a href="/" class="t4e-portal-logo-link" id="logo-link">
+          <img
+            src="assets/images/logo.png"
+            alt="think4ever Logo"
+            class="t4e-portal-logo-img"
+          />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="t4e-portal-header-nav">
+          <a href="#features" class="t4e-portal-nav-link">Features</a>
+          <a href="#how-it-works" class="t4e-portal-nav-link">How It Works</a>
+          <a href="#packages" class="t4e-portal-nav-link">Packages</a>
+        </nav>
+
+        <!-- Header Right (Buttons & Hamburger) -->
+        <div class="t4e-portal-header-right">
+          <a href="#" class="t4e-portal-btn-outline">
+            <i data-lucide="log-in" class="t4e-portal-icon-sm"></i> Sign In
+          </a>
+          <a href="#" class="t4e-portal-btn-primary">
+            <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Get Started
+          </a>
+
+          <!-- Hamburger Toggle -->
+          <button
+            id="menu-toggle"
+            class="t4e-portal-menu-toggle"
+            aria-label="Toggle menu"
+          >
+            <span class="t4e-portal-hamburger-line t4e-portal-line-1"></span>
+            <span class="t4e-portal-hamburger-line t4e-portal-line-2"></span>
+            <span class="t4e-portal-hamburger-line t4e-portal-line-3"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Expanding Menu Content (Mobile) -->
+      <div id="mobile-menu" class="t4e-portal-mobile-menu">
+        <div class="t4e-portal-menu-content">
+          <div class="t4e-portal-menu-items">
+            <div class="t4e-portal-menu-item">
+              <a href="#features" class="t4e-portal-menu-link active">
+                <span class="t4e-portal-active-indicator"></span>
+                <span class="t4e-portal-link-text">Features</span>
+              </a>
+            </div>
+            <div class="t4e-portal-menu-item">
+              <a href="#how-it-works" class="t4e-portal-menu-link">
+                <span class="t4e-portal-active-indicator"></span>
+                <span class="t4e-portal-link-text">How It Works</span>
+              </a>
+            </div>
+            <div class="t4e-portal-menu-item">
+              <a href="#packages" class="t4e-portal-menu-link">
+                <span class="t4e-portal-active-indicator"></span>
+                <span class="t4e-portal-link-text">Packages</span>
+              </a>
+            </div>
+            <div class="t4e-portal-mobile-auth-actions">
+              <a
+                href="#"
+                class="t4e-portal-btn-outline"
+                style="width: 100%; justify-content: center"
+              >
+                <i data-lucide="log-in" class="t4e-portal-icon-sm"></i> Sign In
+              </a>
+              <a
+                href="#"
+                class="t4e-portal-btn-primary"
+                style="width: 100%; justify-content: center; margin-top: 12px"
+              >
+                <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Get
+                Started
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="t4e-portal-main-content">
+      <!-- Hero Section -->
+      <section class="t4e-portal-hero-section" id="home">
+        <!-- Orbital Circle Background (Desktop Only) -->
+        <div class="t4e-portal-orbital-circle t4e-portal-hidden-mobile">
+          <div class="t4e-portal-orbit-ball-container">
+            <div class="t4e-portal-orbit-ball">
+              <div
+                class="t4e-portal-orbit-ball-inner"
+                style="transform: rotate(0deg)"
+              >
+                <div class="t4e-portal-orbit-ball-icon-wrapper">
+                  <i
+                    data-lucide="infinity"
+                    class="t4e-portal-icon-xs"
+                    stroke-width="3"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t4e-portal-orbit-ball-container"
+            style="transform: rotate(120deg)"
+          >
+            <div class="t4e-portal-orbit-ball">
+              <div
+                class="t4e-portal-orbit-ball-inner"
+                style="transform: rotate(-120deg)"
+              >
+                <div class="t4e-portal-orbit-ball-icon-wrapper">
+                  <i
+                    data-lucide="infinity"
+                    class="t4e-portal-icon-xs"
+                    stroke-width="3"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t4e-portal-orbit-ball-container"
+            style="transform: rotate(240deg)"
+          >
+            <div class="t4e-portal-orbit-ball">
+              <div
+                class="t4e-portal-orbit-ball-inner"
+                style="transform: rotate(-240deg)"
+              >
+                <div class="t4e-portal-orbit-ball-icon-wrapper">
+                  <i
+                    data-lucide="infinity"
+                    class="t4e-portal-icon-xs"
+                    stroke-width="3"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical Watermark (Desktop Only) -->
+        <!-- <div class="t4e-portal-watermark t4e-portal-hidden-mobile">
+        PORTAL
+      </div> -->
+
+        <!-- Hero Content -->
+        <div class="t4e-portal-container t4e-portal-hero-inner">
+          <div class="t4e-portal-hero-content">
+            <h1 class="t4e-portal-hero-title">
+              <span
+                class="t4e-portal-inline-flex-center t4e-portal-gap-sm flex-wrap justify-center"
+              >
+                <div class="t4e-portal-blob-container">
+                  <div class="t4e-portal-breathing-blob">
+                    <div class="t4e-portal-breathing-blob-inner"></div>
+                    <div class="t4e-portal-breathing-blob-icon">
+                      <i data-lucide="infinity" stroke-width="3"></i>
+                    </div>
+                  </div>
+                </div>
+                Full-Cycle Development.
+              </span>
+              <br />
+              <span class="t4e-portal-text-gradient">Entirely Agentic.</span>
+            </h1>
+
+            <p class="t4e-portal-hero-subtitle">
+              The only platform where AI agents handle the complete software
+              development lifecycle — from concept to production — all under
+              human oversight.
+            </p>
+
+            <div class="t4e-portal-hero-buttons">
+              <a href="#" class="t4e-portal-btn-primary-lg">
+                <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Start
+                Building
+              </a>
+              <a href="#how-it-works" class="t4e-portal-btn-outline-lg">
+                <i data-lucide="play-circle" class="t4e-portal-icon-sm"></i> See
+                How It Works
+              </a>
+            </div>
+          </div>
+
+          <!-- Pipeline Stepper -->
+          <div class="t4e-portal-pipeline-wrapper t4e-portal-mt-12">
+            <div class="t4e-portal-pipeline-container">
+              <p class="t4e-portal-pipeline-title t4e-portal-text-gradient">
+                END-TO-END SDLC PIPELINE
+              </p>
+              <div class="t4e-portal-pipeline-steps">
+                <div class="t4e-portal-pipeline-step">
+                  <i
+                    data-lucide="lightbulb"
+                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
+                  ></i>
+                  Concept
+                </div>
+                <i
+                  data-lucide="chevron-right"
+                  class="t4e-portal-icon-xs t4e-portal-text-muted"
+                ></i>
+                <div class="t4e-portal-pipeline-step">
+                  <i
+                    data-lucide="pen-tool"
+                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
+                  ></i>
+                  UI Design
+                </div>
+                <i
+                  data-lucide="chevron-right"
+                  class="t4e-portal-icon-xs t4e-portal-text-muted"
+                ></i>
+                <div class="t4e-portal-pipeline-step">
+                  <i
+                    data-lucide="git-branch"
+                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
+                  ></i>
+                  Architecture
+                </div>
+                <i
+                  data-lucide="chevron-right"
+                  class="t4e-portal-icon-xs t4e-portal-text-muted"
+                ></i>
+                <div class="t4e-portal-pipeline-step">
+                  <i
+                    data-lucide="file-text"
+                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
+                  ></i>
+                  Specs
+                </div>
+                <i
+                  data-lucide="chevron-right"
+                  class="t4e-portal-icon-xs t4e-portal-text-muted"
+                ></i>
+                <div class="t4e-portal-pipeline-step">
+                  <i
+                    data-lucide="code"
+                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
+                  ></i>
+                  Build
+                </div>
+                <i
+                  data-lucide="chevron-right"
+                  class="t4e-portal-icon-xs t4e-portal-text-muted"
+                ></i>
+                <div class="t4e-portal-pipeline-step">
+                  <i
+                    data-lucide="check-circle"
+                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
+                  ></i>
+                  Test
+                </div>
+                <i
+                  data-lucide="chevron-right"
+                  class="t4e-portal-icon-xs t4e-portal-text-muted"
+                ></i>
+                <div class="t4e-portal-pipeline-step">
+                  <i
+                    data-lucide="shield"
+                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
+                  ></i>
+                  Security
+                </div>
+                <i
+                  data-lucide="chevron-right"
+                  class="t4e-portal-icon-xs t4e-portal-text-muted"
+                ></i>
+                <div class="t4e-portal-pipeline-step">
+                  <i
+                    data-lucide="rocket"
+                    class="t4e-portal-icon-xs t4e-portal-text-brand-blue"
+                  ></i>
+                  Deploy
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Capabilities Section -->
+      <section class="t4e-portal-capabilities-section" id="capabilities">
+        <div class="t4e-portal-container">
+          <!-- Section Header -->
+          <div class="t4e-portal-section-header">
+            <div class="t4e-portal-badge">
+              <i data-lucide="star" class="t4e-portal-icon-xs"></i> CORE
+              CAPABILITIES
+            </div>
+            <h2 class="t4e-portal-section-title">
+              Everything your team needs,<br />
+              powered by <span class="t4e-portal-text-gradient">AI agents</span>
+            </h2>
+            <p class="t4e-portal-section-subtitle">
+              From first idea to live production, our agents work through every
+              phase — with you in control.
+            </p>
+          </div>
+
+          <!-- Capabilities Grid -->
+          <div class="t4e-portal-capabilities-grid">
+            <!-- Card 1 (Left) -->
+            <div
+              class="t4e-portal-capability-card left-anim"
+              style="
+                --card-bg: #e0f2fe;
+                --card-border: #bae6fd;
+                --card-text: #0284c7;
+              "
+            >
+              <div class="t4e-portal-capability-icon">
+                <i data-lucide="lightbulb"></i>
+              </div>
+              <h3 class="t4e-portal-capability-title">Design Before Code</h3>
+              <div class="t4e-portal-accordion-toggle">
+                <i
+                  data-lucide="plus"
+                  class="t4e-portal-icon-plus t4e-portal-icon-sm"
+                ></i>
+                <i
+                  data-lucide="minus"
+                  class="t4e-portal-icon-minus t4e-portal-icon-sm"
+                ></i>
+              </div>
+              <div class="t4e-portal-capability-body">
+                <div class="t4e-portal-capability-body-inner">
+                  <p>
+                    UI designs, architectural diagrams, functional & technical
+                    specifications — all created before a single line of code is
+                    written.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 (Right) -->
+            <div
+              class="t4e-portal-capability-card right-anim"
+              style="
+                --card-bg: #f3e8ff;
+                --card-border: #e9d5ff;
+                --card-text: #9333ea;
+              "
+            >
+              <div class="t4e-portal-capability-icon">
+                <i data-lucide="mic"></i>
+              </div>
+              <h3 class="t4e-portal-capability-title">Voice & Chat Driven</h3>
+              <div class="t4e-portal-accordion-toggle">
+                <i
+                  data-lucide="plus"
+                  class="t4e-portal-icon-plus t4e-portal-icon-sm"
+                ></i>
+                <i
+                  data-lucide="minus"
+                  class="t4e-portal-icon-minus t4e-portal-icon-sm"
+                ></i>
+              </div>
+              <div class="t4e-portal-capability-body">
+                <div class="t4e-portal-capability-body-inner">
+                  <p>
+                    Interact via voice or text. Agents listen, explain, and
+                    build concepts in real-time as you describe your vision.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 (Left) -->
+            <div
+              class="t4e-portal-capability-card left-anim"
+              style="
+                --card-bg: #dcfce7;
+                --card-border: #bbf7d0;
+                --card-text: #16a34a;
+              "
+            >
+              <div class="t4e-portal-capability-icon">
+                <i data-lucide="refresh-cw"></i>
+              </div>
+              <h3 class="t4e-portal-capability-title">
+                Post-Deployment Agents
+              </h3>
+              <div class="t4e-portal-accordion-toggle">
+                <i
+                  data-lucide="plus"
+                  class="t4e-portal-icon-plus t4e-portal-icon-sm"
+                ></i>
+                <i
+                  data-lucide="minus"
+                  class="t4e-portal-icon-minus t4e-portal-icon-sm"
+                ></i>
+              </div>
+              <div class="t4e-portal-capability-body">
+                <div class="t4e-portal-capability-body-inner">
+                  <p>
+                    System stays alive after deployment. Agents continue to
+                    understand requirements and apply changes automatically.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 (Right) -->
+            <div
+              class="t4e-portal-capability-card right-anim"
+              style="
+                --card-bg: #ffedd5;
+                --card-border: #fed7aa;
+                --card-text: #ea580c;
+              "
+            >
+              <div class="t4e-portal-capability-icon">
+                <i data-lucide="eye"></i>
+              </div>
+              <h3 class="t4e-portal-capability-title">
+                Human Oversight at Every Stage
+              </h3>
+              <div class="t4e-portal-accordion-toggle">
+                <i
+                  data-lucide="plus"
+                  class="t4e-portal-icon-plus t4e-portal-icon-sm"
+                ></i>
+                <i
+                  data-lucide="minus"
+                  class="t4e-portal-icon-minus t4e-portal-icon-sm"
+                ></i>
+              </div>
+              <div class="t4e-portal-capability-body">
+                <div class="t4e-portal-capability-body-inner">
+                  <p>
+                    Review, modify, and approve before agents proceed to the
+                    next phase. You're always in the driver's seat.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 (Left) -->
+            <div
+              class="t4e-portal-capability-card left-anim"
+              style="
+                --card-bg: #fce7f3;
+                --card-border: #fbcfe8;
+                --card-text: #db2777;
+              "
+            >
+              <div class="t4e-portal-capability-icon">
+                <i data-lucide="git-merge"></i>
+              </div>
+              <h3 class="t4e-portal-capability-title">
+                Version Control Built In
+              </h3>
+              <div class="t4e-portal-accordion-toggle">
+                <i
+                  data-lucide="plus"
+                  class="t4e-portal-icon-plus t4e-portal-icon-sm"
+                ></i>
+                <i
+                  data-lucide="minus"
+                  class="t4e-portal-icon-minus t4e-portal-icon-sm"
+                ></i>
+              </div>
+              <div class="t4e-portal-capability-body">
+                <div class="t4e-portal-capability-body-inner">
+                  <p>
+                    Every change tracked, every decision documented. Roll back,
+                    branch, and explore alternatives effortlessly.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 (Right) -->
+            <div
+              class="t4e-portal-capability-card right-anim"
+              style="
+                --card-bg: #ccfbf1;
+                --card-border: #99f6e4;
+                --card-text: #0d9488;
+              "
+            >
+              <div class="t4e-portal-capability-icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <h3 class="t4e-portal-capability-title">
+                Security-First Development
+              </h3>
+              <div class="t4e-portal-accordion-toggle">
+                <i
+                  data-lucide="plus"
+                  class="t4e-portal-icon-plus t4e-portal-icon-sm"
+                ></i>
+                <i
+                  data-lucide="minus"
+                  class="t4e-portal-icon-minus t4e-portal-icon-sm"
+                ></i>
+              </div>
+              <div class="t4e-portal-capability-body">
+                <div class="t4e-portal-capability-body-inner">
+                  <p>
+                    Automated security scanning at every stage. Agents identify
+                    and fix vulnerabilities before they reach production.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================= WHY THINK4EVER SECTION ================= -->
+      <section class="t4e-portal-why-section" id="why-think4ever">
+        <div class="t4e-portal-container">
+
+          <!-- Section Header -->
+          <div class="t4e-portal-why-header">
+            <div class="t4e-portal-badge t4e-portal-badge-dark">
+              <i data-lucide="zap" class="t4e-portal-icon-xs"></i> WHY THINK4EVER
+            </div>
+            <h2 class="t4e-portal-why-title">
+              Built for <span class="t4e-portal-text-gradient">speed</span>,<br>
+              designed for <span class="t4e-portal-text-gradient">control</span>
+            </h2>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="t4e-portal-why-grid">
+
+            <!-- Card 1 -->
+            <div class="t4e-portal-why-card t4e-portal-why-card-anim" data-delay="0">
+              <div class="t4e-portal-why-icon">
+                <i data-lucide="zap"></i>
+              </div>
+              <h3 class="t4e-portal-why-card-title">Lightning Fast</h3>
+              <p class="t4e-portal-why-card-text">From concept to production in record time — no bottlenecks, no delays.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="t4e-portal-why-card t4e-portal-why-card-anim" data-delay="1">
+              <div class="t4e-portal-why-icon">
+                <i data-lucide="bot"></i>
+              </div>
+              <h3 class="t4e-portal-why-card-title">Agents Do the Heavy Lifting</h3>
+              <p class="t4e-portal-why-card-text">AI agents handle the repetitive work so your team can focus on what matters.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="t4e-portal-why-card t4e-portal-why-card-anim" data-delay="2">
+              <div class="t4e-portal-why-icon">
+                <i data-lucide="clock"></i>
+              </div>
+              <h3 class="t4e-portal-why-card-title">Always On, Always Ready</h3>
+              <p class="t4e-portal-why-card-text">Your development pipeline never sleeps — agents work around the clock.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="t4e-portal-why-card t4e-portal-why-card-anim" data-delay="3">
+              <div class="t4e-portal-why-icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <h3 class="t4e-portal-why-card-title">You Stay in Control</h3>
+              <p class="t4e-portal-why-card-text">Every decision reviewed, every step approved — full human oversight guaranteed.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CTA SECTION ================= -->
+      <section class="t4e-portal-cta-section" id="ready-build">
+        <div class="t4e-portal-container">
+          <div class="t4e-portal-cta-box" id="cta-box">
+            <h2 class="t4e-portal-cta-title">Ready to build the future?</h2>
+            <p class="t4e-portal-cta-text">
+              Join thousands of developers who've already transformed their workflow with agentic development. Start building in minutes.
+            </p>
+            <div class="t4e-portal-cta-buttons">
+              <a href="#" class="t4e-portal-cta-btn-primary">
+                <i data-lucide="rocket" class="t4e-portal-icon-sm"></i> Create Account
+              </a>
+              <a href="#" class="t4e-portal-cta-btn-outline">
+                <i data-lucide="log-in" class="t4e-portal-icon-sm"></i> Sign In
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="t4e-portal-footer" id="portal-footer">
+      <div class="t4e-portal-container t4e-portal-footer-container">
+        <!-- Links -->
+        <div class="t4e-portal-footer-links">
+          <a href="#features" class="t4e-portal-footer-link">Features</a>
+          <a href="#how-it-works" class="t4e-portal-footer-link">How it Works</a>
+          <a href="#" class="t4e-portal-footer-link">Pricing</a>
+          <a href="#" class="t4e-portal-footer-link">Sign In</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="t4e-portal-footer-copyright">
+          &copy; 2026 Think4ever&trade;. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
