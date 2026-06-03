@@ -1275,9 +1275,9 @@ a {
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background-color: var(--card-bg, rgba(7, 167, 225, 0.1));
-  border: 1px solid var(--card-border, transparent);
-  color: var(--card-text, var(--color-brand-light-blue));
+  background-color: var(--card-bg, rgba(7, 167, 225, 0.06));
+  border: 1px solid var(--card-border, rgba(7, 167, 225, 0.15));
+  color: var(--card-text, var(--color-brand-blue));
   display: flex;
   align-items: center;
   justify-content: center;
